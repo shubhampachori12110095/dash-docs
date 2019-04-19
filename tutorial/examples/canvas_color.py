@@ -29,7 +29,7 @@ app.layout = html.Div([
                 min=2,
                 max=40,
                 step=1,
-                value=[5]
+                value=5
             ),
             daq.ColorPicker(
                 id='color-picker',
