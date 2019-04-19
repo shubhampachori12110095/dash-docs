@@ -3,6 +3,7 @@ import dash_core_components as dcc
 from tutorial import styles
 from tutorial import tools
 from textwrap import dedent
+import dash_canvas
 
 examples = [
     tools.load_example(s) for s in [
@@ -18,6 +19,14 @@ layout = html.Div([
     dcc.Markdown(dedent('''\
     ## Introduction to dash-canvas
 
+    ''')),
+
+    dcc.SyntaxHighlighter(
+        '''pip install dash-canvas=={}'''.format(dash_canvas.__version__),
+        customStyle=styles.code_container
+    ),
+
+    dcc.Markdown(dedent('''
     ``dash-canvas`` is a module for image annotation and image processing
     using Dash. It provides both the ``DashCanvas`` object for drawing
     and annotations on images, and a set of utility functions to process
